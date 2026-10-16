@@ -1,0 +1,14 @@
+
+---
+
+# `requirements.txt`
+
+```txt id="rd002"
+flask
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+xgboost
+joblib
