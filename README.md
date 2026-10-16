@@ -1,170 +1,181 @@
-# Smart House Price Prediction v2
+# 🏡 Smart House Price Prediction
 
-An end-to-end Machine Learning web application that predicts house prices using advanced regression models and a modern Flask-based user interface.
+### Machine Learning · Python · Flask · Scikit-learn
 
----
+A machine learning web application that predicts house prices using a trained regression model. The project combines data preprocessing, feature scaling, model training, and a Flask-based web interface to make house price prediction accessible through a simple user experience.
 
-# Features
-
-- Real-time house price prediction
-- Machine Learning model using XGBoost
-- INR price conversion
-- Modern responsive UI
-- Feature selection and preprocessing
-- Feature importance visualization
-- Flask web application
-- Clean project structure
+<p align="center">
+  <img src="screenshots/prediction.png" alt="House Price Prediction Result" width="80%">
+</p>
 
 ---
 
-# Technologies Used
+## 📌 Overview
 
-## Backend
-- Python
-- Flask
+House prices depend on multiple property characteristics and market-related factors. This project explores how machine learning can learn patterns from historical housing data and use them to estimate prices for new inputs.
 
-## Machine Learning
-- Scikit-learn
-- XGBoost
-- Pandas
-- NumPy
+**Smart House Price Prediction** provides an end-to-end implementation of a basic machine learning workflow, from preparing data to serving predictions through a web application.
 
-## Visualization
-- Matplotlib
-- Seaborn
+## ✨ Key Features
 
-## Frontend
-- HTML
-- CSS
+- 🤖 **Machine Learning:** Uses a trained regression model to estimate house prices.
+- 🧹 **Data Preprocessing:** Prepares housing data for machine learning.
+- 📏 **Feature Scaling:** Uses a saved scaler to transform input features.
+- 🌐 **Flask Web Application:** Provides a browser-based interface for predictions.
+- 📊 **Model Analysis:** Includes visualizations for accuracy-related evaluation and feature importance, where applicable.
+- 🔮 **Price Prediction:** Generates estimates from user-provided property information.
+- 🗂️ **Saved Artifacts:** Stores the trained model and scaler for inference without retraining on every request.
 
----
+## 🛠️ Tech Stack
 
-# Project Structure
+| Technology | Purpose |
+|---|---|
+| Python | Core programming language |
+| Pandas & NumPy | Data handling and numerical operations |
+| Scikit-learn | Machine learning and preprocessing |
+| Flask | Web application and prediction interface |
+| HTML & CSS | Frontend interface |
+| Matplotlib / Seaborn | Data visualization, if used in the analysis scripts |
 
-Smart-House-Price-Prediction-v2/
+## 🧠 Machine Learning Workflow
 
+```text
+Housing Dataset
+      ↓
+Data Exploration & Preprocessing
+      ↓
+Feature Preparation
+      ↓
+Model Training & Evaluation
+      ↓
+Save Trained Model + Scaler
+      ↓
+Flask Web Application
+      ↓
+User Inputs → Prediction → Estimated Price
+```
+
+The saved model and scaler allow the application to reuse the trained pipeline artifacts when making predictions.
+
+## 📂 Project Structure
+
+```text
+Smart-House-Price-Prediction/
 │
-
 ├── app.py
-
 ├── model.pkl
-
 ├── scaler.pkl
-
 ├── requirements.txt
-
 ├── README.md
-
 │
-
 ├── data/
-
 │   ├── kc_house_data.csv
-
 │   └── processed_data.csv
-
 │
-
 ├── src/
-
 │   ├── eda.py
-
+│   ├── predict.py
+│   ├── preprocessing.py
 │   ├── train.py
-
-│   └── predict.py
-
+│   └── utils.py
 │
-
-├── templates/
-
-│   └── index.html
-
-│
-
 ├── static/
-
+│   └── style.css
 │
-
+├── templates/
+│   └── index.html
+│
 └── screenshots/
+    ├── accuracy.png
+    ├── feature_importance.png
+    └── prediction.png
+```
 
----
+## ⚙️ Getting Started
 
-# Machine Learning Workflow
+### Prerequisites
 
-1. Data Collection
-2. Exploratory Data Analysis (EDA)
-3. Feature Selection
-4. Data Preprocessing
-5. Model Training
-6. Model Evaluation
-7. Flask Integration
-8. Deployment Ready System
+- Python 3.10 or later, subject to compatibility with your installed dependencies
+- pip
+- Git
 
----
-
-# Selected Features
-
-- bedrooms
-- bathrooms
-- sqft_living
-- floors
-- waterfront
-- condition
-- grade
-- yr_built
-
----
-
-# Model Used
-
-## XGBoost Regressor
-
-Why XGBoost?
-- High accuracy
-- Handles complex relationships
-- Industry-level boosting algorithm
-- Better than traditional regression models
-
----
-
-# Installation
-
-## Clone Repository
+### 1. Clone the repository
 
 ```bash
-git clone <your-repository-link>
-Open Project
-cd Smart-House-Price-Prediction-v2
+git clone https://github.com/gradientvb/Smart-House-Price-Prediction.git
+cd Smart-House-Price-Prediction
+```
 
- // Create Virtual Environment :
+### 2. Create a virtual environment
+
+**Windows — PowerShell**
+
+```powershell
 python -m venv venv
+.\venv\Scripts\Activate.ps1
+```
 
- // Activate Environment
-Windows
-venv\Scripts\activate 
+### 3. Install dependencies
 
- // Install Dependencies : 
+```bash
 pip install -r requirements.txt
-Run Application
+```
+
+### 4. Run the application
+
+```bash
 python app.py
+```
 
- // Open browser:
-http://127.0.0.1:5000
+Open the local address displayed in your terminal, commonly:
 
-// Future Scope
- -> SHAP Explainability
--> Deployment on Render
--> Advanced Dashboard
--> Real Estate Analytics
--> User Authentication
--> Prediction History
--> Cloud Deployment
--> AI Recommendation System
+`http://127.0.0.1:5000`
 
-Screenshots
-Add screenshots inside:
-screenshots/
+Enter the required property details to generate a prediction.
 
- // Author : 
-Name - Vaibhav
-B.Tech CSE (Data Science)
+> **Note:** The application expects the saved model and scaler to be available at the paths configured in the project. If they are missing, follow the project's training workflow before running predictions.
+
+## 📸 Screenshots
+
+### Prediction Interface
+
+![Prediction Interface](screenshots/prediction.png)
+
+### Model Evaluation
+
+![Model Evaluation](screenshots/accuracy.png)
+
+### Feature Importance
+
+![Feature Importance](screenshots/feature_importance.png)
+
+## 🎯 Learning Outcomes
+
+Through this project, I explored:
+
+- The end-to-end machine learning development workflow.
+- Data preprocessing and feature transformation.
+- Training and saving a regression model.
+- Integrating a trained model into a Flask application.
+- Connecting backend prediction logic with a frontend interface.
+- Organizing a Python project for reproducibility and version control.
+
+## 🚀 Future Improvements
+
+- Compare multiple regression algorithms.
+- Improve model evaluation and hyperparameter tuning.
+- Add interactive visualizations and prediction explanations.
+- Deploy the application to a cloud platform.
+- Expand input validation and automated testing.
+
+## 👨‍💻 Author
+
+**Vaibhav Bhardwaj**
+
+B.Tech Computer Science & Engineering — Data Science
+
+- GitHub: [@gradientvb](https://github.com/gradientvb)
+
+---
+
+⭐ If you find this project interesting, consider giving the repository a star!
